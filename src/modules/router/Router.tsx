@@ -1,6 +1,7 @@
 import { lazy, Suspense, useState } from 'react';
 import { RouteObject, useRoutes, BrowserRouter } from 'react-router-dom';
 import FullWidth from '@/components/template/FullWidth';
+import { Home } from '@/modules/root/Home';
 
 const Loading = () => (
   <p className="p-4 w-full h-full text-center">Loading...</p>
@@ -17,6 +18,10 @@ const InnerRouter = () => {
       children: [
         {
           index: true,
+          element: <Home />,
+        },
+        {
+          path: 'about',
           element: <DummyScreen />,
         },
         {
